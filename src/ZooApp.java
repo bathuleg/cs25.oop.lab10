@@ -3,14 +3,16 @@ import java.util.List;
 
 public class ZooApp {
 	public static void main(String[] args) {
-		Zoo<Mammal> mammalZoo = new Zoo<>();
-		mammalZoo.addAnimal(new Mammal("Арслан"));
+		List<Mammal> mammals = new ArrayList<>();
+		mammals.addAnimal(new Mammal("Arslan"));
+		List<Bird> birds = new arrayList<>();
+		birds.addAnimal(new Bird("Togoruu"));
+		Zoo<Mammal> mammalZoo= new Zoo<>();
+		mammalZoo.transferAnimals(mammals,animals);
 		Zoo<Bird> birdZoo = new Zoo<>();
-		birdZoo.addAnimal(new Bird("Тогоруу"));
-		List<Animal> generalZoo = new ArrayList<>();
-		mammalZoo.transferAnimals(mammalZoo.getAnimals(), generalZoo);
-		birdZoo.transferAnimals(birdZoo.getAnimals(), generalZoo);
-		generalZoo.forEach(a -> System.out.println(a.getName()));
+		birdZoo.transferAnimals(birds,animals);
+		for(Animal animal : animals) {
+			System.out.println(animal.getName());
+		}
 	}
-
 }
